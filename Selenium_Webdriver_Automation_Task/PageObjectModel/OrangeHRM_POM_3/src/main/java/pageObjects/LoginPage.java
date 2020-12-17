@@ -14,29 +14,7 @@ public class LoginPage {
     }
 
     //using By as a locator for elements
-    private By username = By.xpath("//input[@name='txtUsername']");
-    private By companyImage = By.xpath("//*[@id=\"divLogo\"]/img");
-    private By forgotPassword = By.linkText("Forgot your password?");
-    private By loginPanel = By.xpath("/html//div[@id='logInPanelHeading']");
-
-    public void verifyCompanyImage ()
-    {
-        //Find the company logo element and verify
-        driver.findElement(companyImage).isDisplayed();
-    }
-
-    public void verifyForgotPassword ()
-    {
-        //Find the forgot password element and verify
-        driver.findElement(forgotPassword).isDisplayed();
-    }
-
-    public void verifyLoginPanel ()
-    {
-        //Find the login panel  element and verify
-        driver.findElement(loginPanel).getText();
-    }
-
+    private By username = By.xpath("//*[@id=\"txtUsername\"]");
 
     public void enterUsername(String uName)
     {
@@ -52,8 +30,7 @@ public class LoginPage {
 
     public DashboardPage clickLoginBtn()
     {
-        driver.findElement(By.xpath("//input[@name='Submit']")).click();
+        driver.findElement(By.xpath("//*[@id=\"btnLogin\"]")).click();
         return new DashboardPage(driver);
     }
-
 }
